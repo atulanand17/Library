@@ -60,10 +60,7 @@ numino-library-app/
 - Instead of assuming one physical copy per title, `books.total_copies` and `books.available_copies` support a more realistic library inventory model.
 - `returned_at IS NULL` means the loan is currently active.
 - Additional indexes are added for common access patterns around titles, members, and active loans.
-
-### Implementation Deep Dive
 - Validation is layered. FastAPI/Pydantic validates request shape and field constraints, the service layer validates business rules, and PostgreSQL enforces final data integrity through constraints.
-- 
 
 ---
 
@@ -112,24 +109,17 @@ Base URL: `http://localhost:8000`
 - `POST /books`
 - `GET /books`
 - `GET /books/{book_id}`
-- `PUT /books/{book_id}`
 
 ### Members
 - `POST /members`
 - `GET /members`
 - `GET /members/{member_id}`
-- `PUT /members/{member_id}`
 
 ### Loans
 - `POST /loans/borrow`
 - `POST /loans/{loan_id}/return`
 - `GET /loans`
 - `GET /members/{member_id}/borrowed-books`
-
-### OpenAPI docs
-FastAPI exposes interactive docs automatically at:
-- `http://localhost:8000/docs`
-- `http://localhost:8000/redoc`
 
 ---
 
@@ -244,9 +234,7 @@ curl "http://localhost:8000/loans?member_id=<MEMBER_UUID>"
 ```bash
 curl http://localhost:8000/members/<MEMBER_UUID>/borrowed-books
 ```
-
 ---
-
 
 ## 7) Flow Summary
 
