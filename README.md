@@ -281,6 +281,7 @@ The API returns meaningful errors for common failure cases:
 
 ## 10) Future Improvements
 
+- Configuration and Secrets Management(e.g: DB Credentials)
 - authentication/authorization for  users
 - migrations using Alembic(Reference : https://medium.com/@evembijo/beginners-guide-to-alembic-and-sqlalchemy-in-python-manage-your-database-like-a-pro-9395b5b5080d)
 - audit logs
